@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>爱影视::频道</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="__STYLE__/js/jquery.min.js"></script>
+    <script src="__STYLE__/js/bootstrap.min.js"></script>
+    <link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/style.css" rel="stylesheet">
+</head>
+
+<body class="content">
+
+    <include file="Public:header" />
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-12 column">
+                <div class="page-header">
+                    <h3>
+                        #{$cname}#
+                        <small>分享浏览优秀短片</small>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-xs-12 column">
+
+                <!-- List group -->
+                <div class="list-group">
+                    <volist name="mlist" id="item" empty="$empty">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3  list-group-item">
+                            <div class="row clearfix">
+                                <div class="col-xs-12">
+                                    <img class="img-responsive center-block" src="__STYLE__/{$item.pic}" />
+                                </div>
+                                <div class="col-xs-12">
+                                    <a href="__ROOT__/home/movie/detail?id={$item.id}" title="查看">
+                                        <h3 class="media-heading">
+                                            {$item.name}</h3>
+                                    </a>
+                                    <p class="text-star">
+                                        <span class="text-muted">作者：
+                                            <b>{$item.uname}</b>
+                                        </span> {$item.scount|getstar}
+                                        <span class="text-warning">{$item.scount|round=2}</span>
+                                    </p>
+
+                                    <empty name="item['description']">
+                                        {$item.content|htmlspecialchars|msubstr=###,0,30,'utf-8',false}
+                                        <else /> {$item.description}
+                                    </empty>
+                                    <div class="index-like-block clearfix">
+                                        <span class="time">{$item.addtime}</span>
+                                        <span class="like pull-right">
+                                            <span class="glyphicon glyphicon-heart"></span> {$item.hcount}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </volist>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-xs-12 column">
+                <empty name="page">
+                    <else />
+                    <div class="panel panel-default">
+                        <div class="panel-footer">
+                            <div class="pages">
+                                {$page}
+                            </div>
+                        </div>
+                    </div>
+                </empty>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    <include file="Public:footer" />
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<html>
+
+<head>
+	<title>爱影视::主页</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="__STYLE__/js/jquery.min.js"></script>
+	<script src="__STYLE__/js/bootstrap.min.js"></script>
+	<link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+	<link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+	<link href="__STYLE__/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<include file="Public:header" />
+	<!-- Carousel
+		================================================== -->
+	<empty name="focus">
+
+		<else />
+		<section id="carousel">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<volist name="focus" id="item" key="k">
+						<eq name="k" value="1">
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<else />
+							<li data-target="#myCarousel" data-slide-to="{$k-1}"></li>
+						</eq>
+					</volist>
+				</ol>
+				<div class="carousel-inner" role="listbox">
+					<volist name="focus" id="item" key="k">
+						<eq name="k" value="1">
+							<div class="item active">
+								<a href="__ROOT__/{$item.url}">
+									<img alt="" src="__STYLE__/{$item.img}" />
+								</a>
+							</div>
+							<else />
+							<div class="item">
+								<a href="__ROOT__/{$item.url}">
+									<img alt="" src="__STYLE__/{$item.img}" />
+								</a>
+							</div>
+						</eq>
+					</volist>
+				</div>
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</section>
+	</empty>
+
+	<section id="news">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-8">
+					<div>
+
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs nav-justified" role="tablist">
+							<li role="presentation" <eq name="id" value="1">class="active"</eq>>
+								<a href="__ROOT__/">最新推荐</a>
+							</li>
+							<li role="presentation" <eq name="id" value="2">class="active"</eq>>
+								<a href="__ROOT__/?id=2">热门排行</a>
+							</li>
+							<li role="presentation" <eq name="id" value="3">class="active"</eq>>
+								<a href="__ROOT__/?id=3">星级精选</a>
+							</li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="list">
+								<div class="panel panel-default">
+									<!-- List group -->
+									<div class="list-group">
+										<volist name="mlist" id="item" empty="$empty">
+											<div class="list-group-item">
+												<div class="row clearfix">
+													<div class="col-sm-height col-xs-middle col-sm-4">
+														<img class="img-responsive center-block" src="__STYLE__/{$item.pic}" />
+													</div>
+													<div class="col-sm-height  col-xs-top col-sm-8">
+														<a href="__ROOT__/home/movie/detail?id={$item.id}" title="查看">
+															<h3 class="media-heading">
+																{$item.name}</h4>
+														</a>
+														<p class="text-star">
+															<span class="text-muted">作者：
+																<b>{$item.uname}</b>
+															</span>
+														</p>
+
+														<empty name="item['description']">
+															{$item.content|htmlspecialchars|msubstr=###,0,30,'utf-8',false}
+															<else /> {$item.description}
+														</empty>
+														<div class="index-like clearfix">
+															<span class="time">{$item.addtime}</span>
+															<span class="like pull-right">
+																<span class="glyphicon glyphicon-heart"></span> {$item.hcount}</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</volist>
+									</div>
+									<empty name="page">
+										<else />
+										<div class="panel-footer">
+											<div class="pages">
+												{$page}
+											</div>
+										</div>
+									</empty>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">精彩视频</h3>
+						</div>
+						<!-- List group -->
+						<div class="list-group">
+							<volist name="rmlist" id="item" empty="$empty">
+								<div class="list-group-item">
+									<div class="row clearfix">
+										<div class="col-xs-12">
+											<img class="img-responsive center-block" src="__STYLE__/{$item.pic}" />
+										</div>
+										<div class="col-xs-12">
+											<a href="__ROOT__/home/movie/detail?id={$item.id}" title="查看">
+												<h3 class="media-heading">
+													{$item.name}</h4>
+											</a>
+											<p class="text-star">
+												<span class="text-muted">作者：
+													<b>{$item.uname}</b>
+												</span>
+											</p>
+
+											<empty name="item['description']">
+												{$item.content|htmlspecialchars|msubstr=###,0,30,'utf-8',false}
+												<else /> {$item.description}
+											</empty>
+											<div class="index-like-block clearfix">
+												<span class="time">{$item.addtime}</span>
+												<span class="like pull-right">
+													<span class="glyphicon glyphicon-heart"></span> {$item.hcount}</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</volist>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">最新公告</h3>
+						</div>
+						<!-- List group -->
+						<div class="list-group">
+							<volist name="rnlist" id="item" empty="$empty">
+								<div class="list-group-item">
+									<div class="row clearfix">
+										<div class="col-xs-12">
+											<img class="img-responsive center-block" src="__STYLE__/{$item.pic}" />
+										</div>
+										<div class="col-xs-12">
+											<a href="__ROOT__/home/news/detail?id={$item.id}" title="查看">
+												<h3 class="media-heading">
+													{$item.title}</h4>
+											</a>
+											<empty name="item['description']">
+												{$item.content|htmlspecialchars|msubstr=###,0,30,'utf-8',false}
+												<else /> {$item.description}
+											</empty>
+											<div class="index-like-block clearfix">
+												<span class="time">{$item.addtime}</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</volist>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">热门评论</h3>
+						</div>
+						<div class="panel-body">
+							<div class="list-group">
+								<volist name="rclist" id="item" empty="$empty">
+									<blockquote>
+										<p>{$item.content}</p>
+										<footer>{$item.uname} 于
+											<a href="__ROOT__/home/movie/detail?id={$item.mid}">
+												<cite title="{$item.mname}">{$item.mname}</cite>
+											</a>
+										</footer>
+									</blockquote>
+								</volist>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+	</section>
+
+
+	<include file="Public:footer" />
+
+	<script>
+		// Highlight the top nav as scrolling occurs
+		$('body').scrollspy({
+			target: '.navbar-fixed-top',
+			offset: 51
+		});
+
+		// Closes the Responsive Menu on Menu Item Click
+		$('.navbar-collapse ul li a').click(function () {
+			$('.navbar-toggle:visible').click();
+		});
+
+	</script>
+
+</body>
+
+</html>

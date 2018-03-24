@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>爱影视::用户信息修改</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="__STYLE__/js/jquery.min.js"></script>
+    <script src="__STYLE__/js/bootstrap.min.js"></script>
+    <link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/style.css" rel="stylesheet">
+</head>
+
+<body class="content">
+
+    <include file="Public:header" />
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-12 column ">
+                <form class="form-horizontal  margin4" method="post" action="__URL__/manage_process" autocomplete="off" enctype="multipart/form-data"
+                    onsubmit="return check1();">
+                    <fieldset>
+
+                        <!-- 表单名称 -->
+                        <legend class="text-center">修改用户信息</legend>
+                        <!-- 文本框-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="username">用户名</label>
+                            <div class="col-md-4">
+                                <input id="id" name="id" type="hidden" required="" value="{$list.id}">
+                                <input id="username1" name="username" type="text" placeholder="" class="form-control input-md" required="" value="{$list.username}">
+
+                            </div>
+                        </div>
+
+                        <!-- 文本框-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="password">密码</label>
+                            <div class="col-md-4">
+                                <input id="password1" name="password" type="password" placeholder="" class="form-control input-md" required="" value="{$list.password}">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="repassword">重复密码</label>
+                            <div class="col-md-4">
+                                <input id="repassword1" name="repassword" type="password" placeholder="" class="form-control input-md" required="" value="{$list.password}">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="img">当前头像</label>
+                            <div class="col-md-4">
+                                <img class=" img-circle" src="__PUBLIC__/{$list.img}" width="64px" alt="{$Think.session.username}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="img">修改头像(可选)</label>
+                            <div class="col-md-4">
+
+                                <input id="img2" name="img" type="file" required="">
+                            </div>
+                        </div>
+
+                        <!-- 按钮 -->
+                        <div class="form-group">
+                            <label class="col-xs-4 control-label" for="singlebutton"></label>
+                            <div class="col-xs-4">
+                                <input type="submit" value="确认修改" name="submit" class="btn btn-block btn-lg btn-submit" style="background-color:#444;color:#ffffff;">
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function check1() {
+            var password = $('#password1').val();
+            var repassword = $('#repassword1').val();
+            var telephone = $('#telephone1').val();
+            if (password !== repassword) {
+                alert('密码两次输入的不一致!');
+                return false;
+            } else {
+                // alert('修改个人信息成功！');
+                return true;
+            }
+        };
+
+    </script>
+    <include file="Public:footer" />
+</body>
+
+</html>

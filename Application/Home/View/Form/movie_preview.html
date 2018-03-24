@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>爱影视::预览素材</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="__STYLE__/js/jquery.min.js"></script>
+    <script src="__STYLE__/js/bootstrap.min.js"></script>
+    <link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/style.css" rel="stylesheet">
+</head>
+
+<body class="content">
+
+    <include file="Public:header" />
+    <div class="container ">
+        <div class="row clearfix margin1">
+            <div class="col-xs-12 column">
+                <legend class="text-center">预览素材：#{$mlist.id}:{$mlist.name}</legend>
+                <div class="panel panel-default">
+                    <div class="panel-content padding1">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <empty name="mlist['videosource']">
+                                <empty name="mlist['pic']">
+<iframe class="embed-responsive-item" src="" style="background-color:aliceblue;" frameborder="0" allowfullscreen="true">
+                                    <p class="text-center">暂无视频</p>
+                                </iframe>
+                                    <else />
+                                    <img src="__PUBLIC__/{$mlist.pic}" class="img-responsive center-block">
+                                </empty>
+                                
+                                <else />
+                                <empty name="mlist['pic']">
+                                    <video src="__PUBLIC__/{$mlist.videosource}" controls="controls" preload="auto"></video>
+                                    <else />
+                                    <video src="__PUBLIC__/{$mlist.videosource}" controls="controls" preload="auto" poster="__PUBLIC__/{$mlist.pic}"></video>
+                                </empty>
+                            </empty>
+                        </div>
+                        <empty name="mlist['description']">
+                            <else />
+                            <blockquote>
+                                <p>{$mlist.description}</p>
+                            </blockquote>
+                        </empty>
+                        <div class="wangEditor-container">
+                            <div class="wangEditor-txt">
+                                {$mlist.content|htmlspecialchars_decode|stripslashes}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <include file="Public:footer" />
+</body>
+
+</html>

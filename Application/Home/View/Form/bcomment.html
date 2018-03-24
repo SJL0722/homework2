@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-xs-12 column">
+            <!-- 跟帖 -->
+            <empty name="comment">
+                <else />
+                <volist name="comment" id="clist" key="k" empty="$empty">
+                    <div class="panel panel-default">
+                        <div class="panel-content padding1">
+                            <div class="row clearfix">
+                                <div class="col-sm-4 col-md-3 column blist-container">
+                                    <div class="meta pull-right visible-xs">#{$k+1}</div>
+                                    <ul class="meta blist list-unstyled">
+                                        <li>
+                                            <img alt="{$clist.uname}" class="img-circle" src="__PUBLIC__/{$clist.uimg}"> </li>
+                                        <li>{$clist.uname}</li>
+                                        <li>{$clist.addtime}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-8 col-md-9 column">
+                                    <div class="meta pull-right hidden-xs">#{$k+1}</div>
+                                    <div>
+                                        <div class="wangEditor-txt">
+                                            {$clist.content|htmlspecialchars_decode|stripslashes}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </volist>
+            </empty>
+
+            <div class="panel panel-default">
+                <if condition="isset($_SESSION['username'])">
+                    <form class="form-horizontal" method="POST" action="__ROOT__/home/form/addcomment">
+                        <fieldset>
+                            <div class="panel-heading">
+                                <h3 class="panel-title">发表回复</h3>
+                            </div>
+                            <div class="panel-content padding1">
+                                <input type="hidden" id="rid" class="form-control" name="rid" value="{$Think.get.id}">
+
+                                <input type="hidden" id="type" class="form-control" name="type" value="{$Think.CONTROLLER_NAME}">
+
+                                <input type="hidden" id="uid" class="form-control" name="uid" value="{$Think.session.uid}">
+
+                                <div class="row clearfix">
+                                    <div class="col-sm-4 col-md-3 column blist-container">
+                                        <ul class="meta blist list-unstyled">
+                                            <li>
+                                                <img alt="{$Think.session.username}" class="img-circle" src="__PUBLIC__/{$Think.session.uimg}"> </li>
+                                            <li>{$Think.session.username}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-8 col-md-9 column">
+                                        <textarea class="form-control" rows="10" id="content" name="content" placeholder="愿您的每句评论，都能给大家的生活填色彩..." required></textarea>
+                                        <input id="singlebutton" type="submit" class="btn btn-primary margin1 pull-right" value="提交评论">
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+            </fieldset>
+            </form>
+            <else />
+            <p>请登录后发表评论！</p>
+            </if>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+</div>

@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>爱影视::论坛</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="__STYLE__/js/jquery.min.js"></script>
+    <script src="__STYLE__/js/bootstrap.min.js"></script>
+    <link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/style.css" rel="stylesheet">
+</head>
+
+<body class="content">
+
+    <include file="Public:header" />
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-12 column">
+                <div class="page-header">
+                    <h3>
+                        论坛
+                        <small>畅所欲言</small>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-xs-12 column">
+                <div class="panel panel-default">
+                    <!-- List group -->
+                    <div class="list-group">
+                        <volist name="alist" id="item" empty="$empty">
+                            <div class="list-group-item">
+                                <div class="row clearfix">
+                                    <div class="col-sm-height col-xs-top col-sm-8">
+                                        <a href="__ROOT__/home/forum/detail?id={$item.id}" title="查看">
+                                            <h3 class="media-heading">
+                                                {$item.title}</h3>
+                                        </a>
+                                        <ul class="list-inline meta">
+                                            <li class="uinfo">
+                                                <img alt="{$item.uname}" class="img-circle" width="32px" src="__PUBLIC__/{$item.uimg}"> {$item.uname}
+                                                <li>发布于 {$item.addtime}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </volist>
+                    </div>
+                    <empty name="page">
+                        <else />
+                        <div class="panel-footer">
+                            <div class="pages">
+                                {$page}
+                            </div>
+                        </div>
+                    </empty>
+                </div>
+            </div>
+        </div>
+    </div>
+    <include file="Public:footer" />
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+
+<if condition="isset($_SESSION['username'])">
+    <gt name="isfavor" value="0">
+        <p class='text-center'>您已加入收藏！</p>
+        <else/>
+        <form class='form-horizontal' method='POST' action='__ROOT__/home/form/addfavor'>
+            <fieldset>
+                <input type='hidden' id='rid' class='form-control' name='rid' value='{$Think.get.id}'>
+                <input type='hidden' id='type' class='form-control' name='type' value='{$Think.CONTROLLER_NAME}'>
+                <input type='hidden' id='uid' class='form-control' name='uid' value='{$Think.session.uid}'>
+                <input id='singlebutton' type='submit' class='btn btn-success' value='加入收藏'>
+            </fieldset>
+        </form>
+    </gt>
+    <else />
+    <p class='text-center'>请登录后进行收藏！</p>
+</if>

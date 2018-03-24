@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>爱影视::修改素材</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="__STYLE__/js/jquery.min.js"></script>
+    <script src="__STYLE__/js/bootstrap.min.js"></script>
+    <link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/style.css" rel="stylesheet">
+    <link href="__STYLE__/css/wangEditor.min.css" rel="stylesheet">
+    <script type="text/javascript" src='__STYLE__/js/wangEditor.min.js'></script>
+</head>
+
+<body class="content">
+
+    <include file="Public:header" />
+    <div class="container ">
+        <div class="row clearfix margin1">
+            <div class="col-xs-12 column">
+                <legend class="text-center">修改帖子：#{$list.id}:{$list.name}</legend>
+                <div class="panel panel-default">
+                    <div class="panel-content padding1">
+                        <!-- form -->
+                        <form class="form-horizontal" action="__ROOT__/home/form/forum_change_process" method="post" enctype="multipart/form-data" autocomplete="off">
+
+                            <!-- 文本框-->
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="title">题目</label>
+                                <div class="col-md-8">
+                                    <input id="id" name="id" type="hidden" value="{$list.id}" required />
+                                    <input id="title" name="title" type="text" placeholder="" class="form-control input-md" value="{$list.title}" required />
+                                </div>
+                            </div>
+
+                            <!-- 文本域 -->
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="detail">内容</label>
+                                <div class="col-md-8">
+                                    <textarea class="form-control" id="content" name="detail" rows="20" placeholder="在此输入内容" required>{$list.detail}</textarea>
+                                </div>
+                            </div>
+
+                            <!-- 双按钮 -->
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="">操作</label>
+                                <div class="col-md-8">
+                                    <button type="submit" class="btn btn-primary">提交</button>
+                                    <button type="reset" class="btn btn-default">清空</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <include file="Public:footer" />
+    <script type="text/javascript">
+        $(function () {
+          var editor = new wangEditor('content');
+          editor.config.menus = [
+            'source',
+            '|', // '|' 是菜单组的分割线
+            'bold',
+            'underline',
+            'italic',
+            'strikethrough',
+            'eraser',
+            'forecolor',
+            'quote',
+            'fontfamily',
+            'fontsize',
+            'head',
+            'unorderlist',
+            'orderlist',
+            'alignleft',
+            'aligncenter',
+            'alignright',
+            '|',
+            'link',
+            'unlink',
+            'table',
+            'img',
+            '|',
+            'undo',
+            'redo',
+            'fullscreen'
+          ];
+          // 配置上传图片接口
+          editor.config.uploadImgUrl = '__APP__/Admin/Form/upload';
+          editor.config.uploadImgFileName = 'img';
+          // 设置 headers（举例）
+          editor.config.uploadHeaders = {
+            'Accept': 'text/x-json'
+          };
+          editor.config.emotionsShow = 'value';
+          wangEditor.config.printLog = false;
+    
+          editor.create();
+          // 重置按钮被点击时
+          $('#reset').on('click', function (e) {
+            editor.$txt.html('<p><br></p>');
+          });
+        });
+      </script>
+</body>
+
+</html>

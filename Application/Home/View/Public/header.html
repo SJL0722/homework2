@@ -1,0 +1,53 @@
+<!-- 导航区 -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+                <span class="sr-only">跳至内容区</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="__ROOT__/Home/index">爱影视</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="__ROOT__/Home/index">首页</a>
+                </li>
+                <li>
+                    <a href="__ROOT__/Home/movie">频道</a>
+                </li>
+                <li>
+                    <a href="__ROOT__/Home/article">影评</a>
+                </li>
+                <li>
+                    <a href="__ROOT__/Home/news">新闻</a>
+                </li>
+                <li>
+                    <a href="__ROOT__/Home/forum">论坛</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <if condition="!isset($_SESSION['username'])">
+                    <li>
+                        <a href="__ROOT__/Home/Form/login">登录</a>
+                    </li>
+                    <li>
+                        <a href="__ROOT__/Home/Form/register">注册</a>
+                    </li>
+                <else />
+                    <li class="uinfo">
+                        <a href="__ROOT__/Home/Form/ucenter" title="点此进入微空间"><img alt="{$Think.session.username}" class="img-circle" width="32px" src="__PUBLIC__/{$Think.session.uimg}"> {$Think.session.username}</a>
+                    </li>
+                    <li>
+                        <a href="__ROOT__/Home/Form/logout">退出</a>
+                    </li>
+                </if>
+            </ul>
+        </div>
+    </div>
+</nav>

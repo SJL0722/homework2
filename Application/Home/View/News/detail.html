@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>{$alist.title} —— 爱影视</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="__STYLE__/js/jquery.min.js"></script>
+    <script src="__STYLE__/js/bootstrap.min.js"></script>
+    <link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/style.css" rel="stylesheet">
+</head>
+
+<body class="content">
+
+    <include file="Public:header" />
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-12 column">
+                <div class="panel panel-default">
+                    <div class="panel-content padding1">
+                        <h3 class="page-title">{$alist.title}</h3>
+
+                        <ul class="list-inline meta">
+                            <li class="uinfo">
+                                {$alist.uname}
+                            </li>
+                            <li>发布于 {$alist.addtime}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-12 column">
+                <div class="panel panel-default">
+                    <div class="panel-content padding1">
+                        <empty name="alist['pic']">
+                            <else />
+                            <img class="img-responsive img-rounded center-block" src="__STYLE__/{$alist.pic}">
+                        </empty>
+                        <empty name="alist['description']">
+                            <else />
+                            <blockquote>
+                                <p>{$alist.description}</p>
+                            </blockquote>
+                        </empty>
+                        <div class="wangEditor-container">
+                            <div class="wangEditor-txt">
+                                {$alist.content|htmlspecialchars_decode|stripslashes}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <include file="Public:footer" />
+</body>
+
+</html>

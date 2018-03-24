@@ -1,0 +1,131 @@
+<html>
+
+<head>
+	<title>爱影视注册</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="__STYLE__/js/jquery.min.js"></script>
+	<script src="__STYLE__/js/bootstrap.min.js"></script>
+	<link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+	<link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+	<link href="__STYLE__/css/style.css" rel="stylesheet">
+</head>
+
+<body class="content loginbg">
+
+	<include file="Public:header" />
+	<div class="container">
+		<div class="row clearfix">
+			<div class="row-sm-height">
+				<div class="col-sm-6 col-sm-height col-sm-middle">
+
+				</div>
+				<div class="col-sm-6 col-sm-height col-sm-middle mt30-xs">
+					<div class="panel panel-default margin1">
+						<div class="panel-heading">
+							<h3 class="panel-title">注册</h3>
+						</div>
+						<div class="panel-content padding1">
+							<form class="form-horizontal  margin4" method="post" action="__URL__/register_process" autocomplete="off" enctype="multipart/form-data"
+							 onsubmit="return check1();">
+								<fieldset>
+									<!-- 文本框-->
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="username">用户名</label>
+										<div class="col-md-6">
+											<input id="username1" name="username" type="text" placeholder="" class="form-control input-md" required="">
+
+										</div>
+									</div>
+
+									<!-- 文本框-->
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="password">密码</label>
+										<div class="col-md-6">
+											<input id="password1" name="password" type="password" placeholder="" class="form-control input-md" required="">
+
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="repassword">重复密码</label>
+										<div class="col-md-6">
+											<input id="repassword1" name="repassword" type="password" placeholder="" class="form-control input-md" required="">
+
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="img">头像</label>
+										<div class="col-md-6">
+											<input id="img2" name="img" type="file" required="">
+										</div>
+									</div>
+
+
+									<!--验证码-->
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="verify">验证码</label>
+										<div>
+											<div class="col-md-3 col-xs-6">
+												<input id="verify1" name="verify" type="text" placeholder="验证码" class="form-control input-lg" required="">
+											</div>
+											<div class="col-md-3 col-xs-6 captcha-container">
+												<img height="46px" alt="验证码" src="{:U('Home/Form/verify_c',array())}" title="点击刷新">
+											</div>
+										</div>
+
+									</div>
+
+									<!-- 按钮 -->
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="singlebutton"></label>
+										<div class="col-md-6">
+											<input type="submit" value="注册" name="submit" class="btn btn-block btn-lg btn-submit" style="background-color:#444;color:#ffffff;">
+											</button>
+											<h6 align="right">
+												<a href="__ROOT__/home/form/login" style="color:#444;">&nbsp;&nbsp;前往登录</a>
+											</h6>
+										</div>
+									</div>
+
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<script>
+		var captcha_img = $('.captcha-container').find('img')
+		var verifyimg = captcha_img.attr("src");
+		captcha_img.attr('title', '点击刷新');
+		captcha_img.click(function () {
+			if (verifyimg.indexOf('?') > 0) {
+				$(this).attr("src", verifyimg + '&random=' + Math.random());
+			} else {
+				$(this).attr("src", verifyimg.replace(/\?.*$/, '') + '?' + Math.random());
+			}
+		});
+
+		function check1() {
+			var password = $('#password1').val();
+			var repassword = $('#repassword1').val();
+			var telephone = $('#telephone1').val();
+			if (password !== repassword) {
+				alert('密码两次输入的不一致!');
+				return false;
+			} else {
+				// alert('修改个人信息成功！');
+				return true;
+			}
+		};
+
+	</script>
+	<include file="Public:footer" />
+</body>
+
+</html>

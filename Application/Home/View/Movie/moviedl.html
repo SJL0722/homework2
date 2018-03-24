@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>{$mlist.name}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="__STYLE__/js/jquery.min.js"></script>
+
+    <link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+    <script src="__STYLE__/js/bootstrap.min.js"></script>
+    <link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/style.css" rel="stylesheet">
+</head>
+
+<body class="content">
+
+    <include file="Public:header" />
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-content padding1 text-center">
+                        <img src="__PUBLIC__/image/iqrcode.jpg" class="img-responsive">
+                        <p>若您觉得该视频对您有益，<br />不妨扫描一下上方的二维码赞赏本站！</p>
+                        <a href="__PUBLIC__/{$mlist.videosource}" class="btn btn-igreen"><span class="glyphicon glyphicon-download"></span> 继续下载视频</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <include file="Public:footer" />
+</body>
+
+</html>

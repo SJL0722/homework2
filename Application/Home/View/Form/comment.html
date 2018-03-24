@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-xs-12 column ">
+            <!-- 表单名称 -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">影片点评</h3>
+                </div>
+                <div class="panel-content padding1">
+                    <volist name="comment" id="commentitem" key="k" empty="$empty">
+                        <div class="media">
+                            <div class="media-left media-center">
+                                <img class="media-object img-circle" src="__STYLE__/{$commentitem.uimg}" width="32px" alt="{$commentitem.uname}" title="{$commentitem.uname}">
+                            </div>
+                            <div class="media-body">
+                                <p class="text-muted">{$commentitem.uname}</p>
+                                <p>{$commentitem.content}</p>
+                                <p class="text-muted">{$commentitem.addtime}</p>
+                            </div>
+                        </div>
+                    </volist>
+                </div>
+
+                <if condition="isset($_SESSION['username'])">
+                    <form class="form-horizontal" method="POST" action="__ROOT__/home/form/addcomment">
+                        <fieldset>
+                            <div class="panel-content padding1">
+                                <input type="hidden" id="rid" class="form-control" name="rid" value="{$Think.get.id}">
+
+                                <input type="hidden" id="type" class="form-control" name="type" value="{$Think.CONTROLLER_NAME}">
+
+                                <input type="hidden" id="uid" class="form-control" name="uid" value="{$Think.session.uid}">
+
+                                <div class="media">
+                                    <div class="media-left media-center">
+                                        <img class="media-object img-circle" src="__STYLE__/{$Think.session.uimg}" width="32px" alt="{$Think.session.username}" title="{$Think.session.username}">
+                                    </div>
+                                    <div class="media-body">
+                                        <textarea class="form-control" rows="3" name="content" placeholder="愿您的每句评论，都能给大家的生活填色彩..." required></textarea>
+                                        <input id="singlebutton" type="submit" class="btn btn-primary margin1 pull-right" value="提交评论">
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+            </fieldset>
+            </form>
+            <else />
+            <p>请登录后发表评论！</p>
+            </if>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>

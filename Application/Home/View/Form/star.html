@@ -1,0 +1,86 @@
+<html>
+
+<head>
+	<title>收藏</title>
+	<script src="__STYLE__/js/jquery.min.js"></script>
+	<script src="__STYLE__/js/bootstrap.min.js"></script>
+	<link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+	<link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+	<link href="__STYLE__/css/style.css" rel="stylesheet">
+	<script src="__STYLE__/js/active.min.js"></script>
+</head>
+
+<body>
+	<include file="Public:header" />
+	<div class="container  margin1">
+		<div class="row clearfix">
+			<div class="col-xs-12 column">
+				<div class="page-header">
+					<h3>
+						收藏
+					</h3>
+				</div>
+				<div class="tabbable" id="tablist">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#gym" data-toggle="tab">体育场馆({$count1})</a>
+						</li>
+						<li>
+							<a href="#coach" data-toggle="tab">教练({$count2})</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="gym">
+							<div class="col-xs-12  margin1" id="booklist">
+								<volist name="list1" id="item" key="k" empty="$empty">
+									<div class="col-xs-2 no-padding">
+										<div class="thumbnail">
+											<a href="__ROOT__/home/gym/detail?id={$item.typeid}" target="_blank">
+												<img src="__STYLE__/{$item.img}" alt="{$item.gymname}">
+											</a>
+											<div class="caption">
+												<a class="text-success" href="__ROOT__/home/gym/detail?id={$item.typeid}">
+													<h4>{$item.gymname}</h4>
+												</a>
+												<p class="text-right"><a href="__ROOT__/home/form/Star_delete?id={$item.id}" style="color:blue;">删除</a></p>
+											</div>
+										</div>
+									</div>
+								</volist>
+							</div>
+							<div class="pages">
+								{$page1}
+							</div>
+						</div>
+						<div class="tab-pane" id="coach">
+							<div class="col-xs-12 margin1" id="booklist">
+								<volist name="list2" id="item" key="k" empty="$empty">
+									<div class="col-xs-2 no-padding">
+										<div class="thumbnail">
+											<a href="__ROOT__/home/gym/coach?id={$item.typeid}" target="_blank">
+												<img src="__STYLE__/{$item.img}" alt="{$item.gymname}">
+											</a>
+											<div class="caption">
+												<a class="text-success" href="__ROOT__/home/gym/coach?id={$item.typeid}">
+													<h4>{$item.coachname}</h4>
+												</a>
+												<p class="text-right"><a href="__ROOT__/home/form/Star_delete?id={$item.id}" style="color:blue;">删除</a></p>
+											</div>
+										</div>
+									</div>
+								</volist>
+							</div>
+							<div class="pages">
+								{$page2}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="__STYLE__/js/util.checkall.js"></script>
+	<include file="Public:footer" />
+</body>
+
+</html>

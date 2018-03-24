@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <title>{$alist.title}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="__STYLE__/js/jquery.min.js"></script>
+    <script src="__STYLE__/js/bootstrap.min.js"></script>
+    <link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/wangEditor.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src='__STYLE__/js/wangEditor.min.js'></script>
+</head>
+
+<body class="content">
+
+    <include file="Public:header" />
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-12 column">
+                <div class="panel panel-default">
+                    <div class="panel-content padding1">
+                        <div class="meta pull-right">
+                            <span class="glyphicon glyphicon-comment"></span> {$ccount}</div>
+                        <h3 class="page-title no-margin">{$alist.title}</h3>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-content padding1">
+                        <div class="row clearfix">
+                            <div class="col-sm-4 col-md-3 column blist-container">
+                                <div class="meta pull-right visible-xs">#1</div>
+                                <ul class="meta blist list-unstyled">
+                                    <li>
+                                        <img alt="{$mlist.uname}" class="img-circle" src="__PUBLIC__/{$alist.uimg}"> </li>
+                                    <li>{$alist.uname}</li>
+                                    <li>{$alist.addtime}</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-8 col-md-9 column">
+                                    <div class="meta pull-right hidden-xs">#1</div>
+                                <div>
+                                    <div class="wangEditor-txt">
+                                        {$alist.detail|htmlspecialchars_decode|stripslashes}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <include file="Form:bcomment" />
+    <include file="Public:footer" />
+    <script type="text/javascript">
+        $(function () {
+          var editor = new wangEditor('content');
+          editor.config.menus = [
+            'source',
+            '|', // '|' 是菜单组的分割线
+            'bold',
+            'underline',
+            'italic',
+            'strikethrough',
+            'eraser',
+            'forecolor',
+            'quote',
+            'fontfamily',
+            'fontsize',
+            'head',
+            'unorderlist',
+            'orderlist',
+            'alignleft',
+            'aligncenter',
+            'alignright',
+            '|',
+            'link',
+            'unlink',
+            'table',
+            'img',
+            '|',
+            'undo',
+            'redo',
+            'fullscreen'
+          ];
+          // 配置上传图片接口
+          editor.config.uploadImgUrl = '__APP__/Admin/Form/upload';
+          editor.config.uploadImgFileName = 'img';
+          // 设置 headers（举例）
+          editor.config.uploadHeaders = {
+            'Accept': 'text/x-json'
+          };
+          editor.config.emotionsShow = 'value';
+          wangEditor.config.printLog = false;
+    
+          editor.create();
+          // 重置按钮被点击时
+          $('#reset').on('click', function (e) {
+            editor.$txt.html('<p><br></p>');
+          });
+        });
+      </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>爱影视::频道</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="__STYLE__/js/jquery.min.js"></script>
+    <script src="__STYLE__/js/bootstrap.min.js"></script>
+    <link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/animate.min.css" rel="stylesheet">
+    <link href="__STYLE__/css/style.css" rel="stylesheet">
+</head>
+
+<body class="content">
+
+    <include file="Public:header" />
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-12 column">
+                <div class="page-header">
+                    <h3>
+                        频道列表
+                        <small>浏览优秀电影</small>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix channel-list">
+            <div class="col-xs-12">
+                <volist name="clist" id="item" empty="$empty">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 channel-list-item">
+                    <a href="__ROOT__/Home/movie/section?id={$item.id}" class="channel-arrow">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </a>
+                    <a href="__ROOT__/Home/movie/section?id={$item.id}" class="channel-img">
+                        <img src="__PUBLIC__/{$item.pic}" alt="{$item.name}">
+                        <div class="channel-name-warp">
+                            <span class="channel-name">#{$item.name}#</span>
+                        </div>
+                    </a>
+                </div>
+            </volist>
+            </div>
+            
+        </div>
+    </div>
+    <include file="Public:footer" />
+</body>
+
+</html>
