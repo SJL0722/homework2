@@ -52,12 +52,16 @@
                                     <h3 class="page-title">{$mlist.name}</h3>
                                     <ul class="list-inline meta">
                                         <li class="uinfo">
-                                            <img alt="{$mlist.uname}" class="img-circle" width="32px" src="__PUBLIC__/{$mlist.uimg}"> {$mlist.uname}
+                                            <eq name="mlist.uid" value="0">
+                                                <else/>
+                                                <img alt="{$mlist.uname}" class="img-circle" width="32px" src="__PUBLIC__/{$mlist.uimg}">
+                                            </eq>
+                                            {$mlist.uname}
                                         </li>
                                         <li>发布于 {$mlist.addtime}</li>
                                         <li>频道： {$mlist.cname}</li>
                                         <li>
-                                            <a tabindex="0" class="" role="button" data-toggle="popover" data-trigger="focus" title="" data-html="true" data-content="<include file="Form:vote" />" data-placement="bottom">
+                                            <a tabindex="0" class="" role="button" data-toggle="popover" data-trigger="focus" title="" data-html="true" data-content="<include file="Form:vote"/>" data-placement="bottom">
                                                 <span class="glyphicon glyphicon-heart"></span>
                                                 <empty name="scount">
                                                     <span class="text-muted">暂无评分</span>
@@ -69,7 +73,7 @@
                                         </li>
                                         <li class="pull-right">
                                             <a tabindex="0" class="" role="button" data-toggle="popover" data-trigger="focus" title="" data-html="true" data-placement="bottom"
-                                                data-content="<include file="Form:favor" />">+ 加入收藏</a>
+                                                data-content="<include file="Form:favor"/>">+ 加入收藏</a>
                                             <span class="glyphicon glyphicon-comment"></span> {$ccount} </li>
                                     </ul>
                                 </div>
