@@ -53,7 +53,7 @@ class CategoryController extends Controller {
                     $image = new \Think\Image();
                     $image->open($fullpath);
                     // 生成一个固定大小为150*150的缩略图并保存为thumb.jpg
-                    $result = $image->thumb(544, 364,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
+                    $result = $image->thumb(400, 600,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
                     if($result){
                         $this->success('频道已发布！','index');
                     }else{
@@ -105,7 +105,7 @@ class CategoryController extends Controller {
                         $image = new \Think\Image();
                         $image->open($fullpath);
                         // 生成一个固定大小1920*700的缩略图并替换原图
-                        $image->thumb(400, 400,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
+                        $image->thumb(400, 600,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
                     }
                 }
                 $Data->addtime = date("Y-m-d H:i:s" ,time());

@@ -1,5 +1,5 @@
 <?php
-namespace user\Controller;
+namespace Admin\Controller;
 use Think\Controller;
 class ForumController extends Controller {
     public function index($uidA = ''){

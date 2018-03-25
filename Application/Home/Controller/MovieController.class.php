@@ -29,7 +29,7 @@ class MovieController extends Controller {
         
         $p = getpage($count,10);
         
-        $mlist = $Movie->field('movie.*,user.username as uname,user.img as uimg,sum(vote.num) as hcount,avg(vote.num) as scount')->join('vote on movie.id = vote.rid')->join('user ON movie.uid = user.id')->where($where)->order("addtime desc")->group('vote.rid')->limit($p->firstRow, $p->listRows)->select();
+        $mlist = $Movie->field('movie.*,user.username as uname,user.img as uimg,count(vote.num) as hcount')->join('vote on movie.id = vote.rid')->join('user ON movie.uid = user.id')->where($where)->order("addtime desc")->group('vote.rid')->limit($p->firstRow, $p->listRows)->select();
         $this->assign('page', $p->show());
         $this->assign('cname', $cname);
         $this->assign('mlist', $mlist);

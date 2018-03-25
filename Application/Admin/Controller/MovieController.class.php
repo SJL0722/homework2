@@ -126,10 +126,10 @@ class MovieController extends Controller {
                         $image = new \Think\Image();
                         $image->open($fullpath);
                         // 生成一个固定大小1920*700的缩略图并替换原图
-                        $image->thumb(600, 400,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
+                        $image->thumb(400, 600,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
                     }
                 }
-                else if(isset($_FILES['videosource'])){
+                if(isset($_FILES['videosource'])){
                     $upload = new \Think\Upload();// 实例化上传类
                     $upload->maxSize = 10*1024*1024;// 设置附件上传大小:10M
                     $upload->exts = array('mp4', 'png', 'jpeg');// 设置附件上传类型
@@ -146,7 +146,7 @@ class MovieController extends Controller {
                 $Data->addtime = date("Y-m-d H:i:s" ,time());
                 $result = $Data->add();
                 if($result){
-                    $this->success('稿件提交成功！','ucenter');
+                    $this->success('影片提交成功！','index');
                 }else{
                     $this->error('发布错误！');
                 }
@@ -203,12 +203,12 @@ class MovieController extends Controller {
                         $image = new \Think\Image();
                         $image->open($fullpath);
                         // 生成一个固定大小1920*700的缩略图并替换原图
-                        $image->thumb(600, 400,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
+                        $image->thumb(400, 600,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
                     }
                 }
-                else if(isset($_FILES['videosource'])){
+                if(isset($_FILES['videosource'])){
                     $upload1 = new \Think\Upload();// 实例化上传类
-                    $upload1->maxSize = 20*1024*1024;// 设置附件上传大小:10M
+                    $upload1->maxSize = 30*1024*1024;// 设置附件上传大小:10M
                     $upload1->exts = array('mp4', 'png', 'jpeg');// 设置附件上传类型
                     $upload1->rootPath = './Public/video/'; // 设置附件上传根目录
                     $upload1->savePath = '';
@@ -225,7 +225,7 @@ class MovieController extends Controller {
                 $Data->addtime = date("Y-m-d H:i:s" ,time());
                 $result = $Data->save();
                 if($result){
-                    $this->success('稿件修改成功！','ucenter');
+                    $this->success('影片修改成功！','index');
                 }else{
                     $this->error('修改错误！');
                 }

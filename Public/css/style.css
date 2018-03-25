@@ -246,7 +246,16 @@ section.footer{
 }
 .dark{
     background-color: #666;
-    color: #999;
+}
+.dark .panel-default{
+    background:#1f1f1f;
+    color: #ddd;
+}
+.dark .page-title{
+    color: #ddd;
+}
+.dark .meta a,.dark .meta a:hover,a:focus{
+    color: #ddd;
 }
 
 #carousel .carousel-caption{
@@ -339,7 +348,7 @@ hr {
 }
 /* 频道 */
 .channel-list .channel-list-item {
-    height: 182px;
+    height: 415px;
     overflow: hidden;
     /* float: left; */
     /* margin-left: 30px;

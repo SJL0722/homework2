@@ -16,62 +16,82 @@
 <body class="content">
 
     <include file="Public:header" />
-    <div class="container">
-        <div class="row clearfix">
-            <div class="col-xs-12 column">
-                <div class="panel panel-default">
-                    <div class="panel-content padding1">
-
-                        <h3 class="page-title">{$mlist.name}</h3>
-                        <ul class="list-inline meta">
-                            <li class="uinfo">
-                                <img alt="{$mlist.uname}" class="img-circle" width="32px" src="__PUBLIC__/{$mlist.uimg}"> {$mlist.uname}
-                            </li>
-                            <li>发布于 {$mlist.addtime}</li>
-                            <li>频道： {$mlist.cname}</li>
-                            <li>
-                                <a tabindex="0" class="" role="button" data-toggle="popover" data-trigger="focus" title="" data-html="true" data-content="<include file="Form:vote" />" data-placement="bottom" >
-                                <span class="glyphicon glyphicon-heart"></span> 
-                                    <empty name="scount">
-                                        <span class="text-muted">暂无评分</span>
+    <div class="container-fluid dark">
+        <div class="container">
+            <div class="row clearfix">
+                <div class="">
+                    <div class="panel panel-default margin1">
+                        <div class="panel-content padding1">
+                            <div class="row clearfix">
+                                <div class="col-md-8">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <empty name="mlist['videosource']">
+                                            <iframe class="embed-responsive-item" src="" style="background-color:aliceblue;" frameborder="0" allowfullscreen="true">
+                                                <p class="text-center">暂无视频</p>
+                                            </iframe>
+                                            <else />
+                                            <empty name="mlist['pic']">
+                                                <video src="__PUBLIC__/{$mlist.videosource}" controls="controls" preload="auto"></video>
+                                                <else />
+                                                <video src="__PUBLIC__/{$mlist.videosource}" controls="controls" preload="auto" poster="__PUBLIC__/{$mlist.pic}"></video>
+                                            </empty>
+                                        </empty>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 hidden-xs hidden-sm margin1">
+                                    <empty name="mlist['description']">
                                         <else />
-                                        <span class="text-muted">{$pcount}</span>
+                                        <blockquote>
+                                            <p>{$mlist.description}</p>
+                                        </blockquote>
                                     </empty>
-                                </a>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-md-12">
+                                    <h3 class="page-title">{$mlist.name}</h3>
+                                    <ul class="list-inline meta">
+                                        <li class="uinfo">
+                                            <img alt="{$mlist.uname}" class="img-circle" width="32px" src="__PUBLIC__/{$mlist.uimg}"> {$mlist.uname}
+                                        </li>
+                                        <li>发布于 {$mlist.addtime}</li>
+                                        <li>频道： {$mlist.cname}</li>
+                                        <li>
+                                            <a tabindex="0" class="" role="button" data-toggle="popover" data-trigger="focus" title="" data-html="true" data-content="<include file="Form:vote" />" data-placement="bottom">
+                                                <span class="glyphicon glyphicon-heart"></span>
+                                                <empty name="scount">
+                                                    <span class="text-muted">暂无评分</span>
+                                                    <else />
+                                                    <span class="text-muted">{$pcount}</span>
+                                                </empty>
+                                            </a>
 
-                            </li>
-                            <li class="pull-right">
-                                <a tabindex="0" class="" role="button" data-toggle="popover" data-trigger="focus" title="" data-html="true" data-placement="bottom" data-content="<include file="Form:favor" />">+ 加入收藏</a>
-                                <span class="glyphicon glyphicon-comment"></span> {$ccount} </li>
-                        </ul>
+                                        </li>
+                                        <li class="pull-right">
+                                            <a tabindex="0" class="" role="button" data-toggle="popover" data-trigger="focus" title="" data-html="true" data-placement="bottom"
+                                                data-content="<include file="Form:favor" />">+ 加入收藏</a>
+                                            <span class="glyphicon glyphicon-comment"></span> {$ccount} </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
+    </div>
     </div>
     <div class="container">
         <div class="row clearfix">
             <div class="col-xs-12 column">
-                <div class="panel panel-default">
+                <div class="panel panel-default margin1">
                     <div class="panel-content padding1">
-                        <empty name="mlist['description']">
-                            <else />
-                            <blockquote>
-                                <p>{$mlist.description}</p>
-                            </blockquote>
-                        </empty>
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <empty name="mlist['videosource']">
-                                <iframe class="embed-responsive-item" src="" style="background-color:aliceblue;" frameborder="0" allowfullscreen="true">
-                                    <p class="text-center">暂无视频</p>
-                                </iframe>
+                        <div class="visible-xs visible-sm">
+                            <empty name="mlist['description']">
                                 <else />
-                                <empty name="mlist['pic']">
-                                    <video src="__PUBLIC__/{$mlist.videosource}" controls="controls" preload="auto"></video>
-                                    <else />
-                                    <video src="__PUBLIC__/{$mlist.videosource}" controls="controls" preload="auto" poster="__PUBLIC__/{$mlist.pic}"></video>
-                                </empty>
+                                <blockquote>
+                                    <p>{$mlist.description}</p>
+                                </blockquote>
                             </empty>
                         </div>
 
@@ -82,7 +102,8 @@
                         </div>
 
                         <div class="text-center">
-                            <a href="__URL__/moviedl?id={$mlist.id}" class="btn btn-igreen"><span class="glyphicon glyphicon-download"></span> 下载视频</a>
+                            <a href="__URL__/moviedl?id={$mlist.id}" class="btn btn-igreen">
+                                <span class="glyphicon glyphicon-download"></span> 下载视频</a>
                         </div>
                     </div>
                 </div>

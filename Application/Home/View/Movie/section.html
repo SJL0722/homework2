@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>爱影视::频道</title>
+    <title>{$cname}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,8 +20,7 @@
             <div class="col-xs-12 column">
                 <div class="page-header">
                     <h3>
-                        #{$cname}#
-                        <small>分享浏览优秀短片</small>
+                        {$cname}
                     </h3>
                 </div>
             </div>
@@ -45,8 +44,7 @@
                                     <p class="text-star">
                                         <span class="text-muted">作者：
                                             <b>{$item.uname}</b>
-                                        </span> {$item.scount|getstar}
-                                        <span class="text-warning">{$item.scount|round=2}</span>
+                                        </span>
                                     </p>
 
                                     <empty name="item['description']">

@@ -228,7 +228,7 @@ class FormController extends Controller{
                         $image = new \Think\Image();
                         $image->open($fullpath);
                         // 生成一个固定大小1920*700的缩略图并替换原图
-                        $image->thumb(600, 400,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
+                        $image->thumb(400, 600,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
                     }
                 }
                 if(isset($_FILES['videosource'])){
@@ -248,7 +248,7 @@ class FormController extends Controller{
                 $Data->addtime = date("Y-m-d H:i:s" ,time());
                 $result = $Data->add();
                 if($result){
-                    $this->success('稿件提交成功！','ucenter');
+                    $this->success('影片提交成功！','ucenter');
                 }else{
                     $this->error('发布错误！');
                 }
@@ -424,7 +424,7 @@ class FormController extends Controller{
                         $image = new \Think\Image();
                         $image->open($fullpath);
                         // 生成一个固定大小1920*700的缩略图并替换原图
-                        $image->thumb(600, 400,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
+                        $image->thumb(400, 600,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
                     }
                 }
                 if(isset($_FILES['videosource'])){
@@ -439,14 +439,12 @@ class FormController extends Controller{
                     if($info1) {// 上传错误提示错误信息
                         
                         $Data->videosource = 'video/'.$info1['savename'];
-                    }else{
-                        $this->error($upload1->getError());
                     }
                 }
                 $Data->addtime = date("Y-m-d H:i:s" ,time());
                 $result = $Data->save();
                 if($result){
-                    $this->success('稿件修改成功！','ucenter');
+                    $this->success('影片修改成功！','ucenter');
                 }else{
                     $this->error('修改错误！');
                 }
