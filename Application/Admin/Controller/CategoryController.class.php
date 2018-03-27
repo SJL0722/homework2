@@ -9,7 +9,7 @@ class CategoryController extends Controller {
             $count = $Data->count();
             $p = getpage($count,10);
             $result = $Data->limit($p->firstRow, $p->listRows)->select();
-            $this->assign('empty','<span class="empty">暂无频道</span>');
+            $this->assign('empty','<span class="empty">暂无分类</span>');
             $this->assign('list',$result);
             $this->assign('page', $p->show());
             $this->display();
@@ -53,9 +53,9 @@ class CategoryController extends Controller {
                     $image = new \Think\Image();
                     $image->open($fullpath);
                     // 生成一个固定大小为150*150的缩略图并保存为thumb.jpg
-                    $result = $image->thumb(400, 600,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
+                    $result = $image->thumb(400, 400,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
                     if($result){
-                        $this->success('频道已发布！','index');
+                        $this->success('分类已发布！','index');
                     }else{
                         $this->error('发布错误！');
                     }
@@ -77,7 +77,7 @@ class CategoryController extends Controller {
                 $this->assign('clist',$result);
                 $this->display();
             }else{
-                $this->error('该频道不存在');
+                $this->error('该分类不存在');
             }
         }else{
             $this->redirect('/Admin/Form/login');
@@ -105,7 +105,7 @@ class CategoryController extends Controller {
                         $image = new \Think\Image();
                         $image->open($fullpath);
                         // 生成一个固定大小1920*700的缩略图并替换原图
-                        $image->thumb(400, 600,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
+                        $image->thumb(400, 400,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
                     }
                 }
                 $Data->addtime = date("Y-m-d H:i:s" ,time());
@@ -113,9 +113,9 @@ class CategoryController extends Controller {
                 //获取全路径
                 
                 if($result !== "false"){
-                    $this->success('频道已修改！','index');
+                    $this->success('分类已修改！','index');
                 }else{
-                    $this->error('频道修改错误！');
+                    $this->error('分类修改错误！');
                 }
             }
         }else{

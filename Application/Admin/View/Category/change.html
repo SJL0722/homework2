@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>频道管理:添加</title>
+    <title>分类管理:添加</title>
     <script src="__STYLE__/js/jquery.min.js"></script>
     <script src="__STYLE__/js/bootstrap.min.js"></script>
     <link href="__STYLE__/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">爱影视系统</a>
+                <a class="navbar-brand" href="#">视频学习网系统</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <include file="./Application/Admin/Common/nav.html" />
@@ -37,14 +37,14 @@
                 <p class="pull-right" style="margin-top: 20px;">
                     <a class="btn btn-primary" href="__ROOT__/admin/Category">返回</a>
                 </p>
-                <h2 class="sub-header">频道管理:修改频道
+                <h2 class="sub-header">分类管理:修改分类
                     <small>#{$clist.id}:{$clist.name}</small>
                 </h2>
                 <form class="form-horizontal" action="__ROOT__/admin/category/change_process" method="post" enctype="multipart/form-data"
                     autocomplete="off">
                     <!-- 文本框-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="name">频道名</label>
+                        <label class="col-md-4 control-label" for="name">分类名</label>
                         <div class="col-md-4">
                             <input name="id" type="hidden" value="{$clist.id}" required />
                             <input id="name" name="name" type="text" placeholder="" value="{$clist.name}" class="form-control input-md" required />

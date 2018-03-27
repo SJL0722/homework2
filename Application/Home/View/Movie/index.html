@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>频道</title>
+    <title>分类</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,16 +20,32 @@
             <div class="col-xs-12 column">
                 <div class="page-header">
                     <h3>
-                        频道列表
-                        <small>浏览优秀电影</small>
+                        分类列表
+                        <small>浏览优秀课程</small>
                     </h3>
                 </div>
             </div>
         </div>
-        <div class="row clearfix channel-list">
-            <div class="col-xs-12">
-                <volist name="clist" id="item" empty="$empty">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 channel-list-item">
+        <div class="row clearfix">
+
+
+            <volist name="clist" id="item" empty="$empty">
+
+                <div class="col-xs-6 col-sm-4">
+                    <div class="thumbnail padding1">
+                        <a href="__ROOT__/Home/movie/section?id={$item.id}"> <img src="__PUBLIC__/{$item.pic}" alt="{$item.name}"/>
+                        </a>
+                        <div class="caption text-center">
+                            <h3>
+                                <a href="__ROOT__/Home/movie/section?id={$item.id}">
+                                    {$item.name}
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 channel-list-item">
                     <a href="__ROOT__/Home/movie/section?id={$item.id}" class="channel-arrow">
                         <span class="glyphicon glyphicon-menu-right"></span>
                     </a>
@@ -39,10 +55,8 @@
                             <span class="channel-name">{$item.name}</span>
                         </div>
                     </a>
-                </div>
+                </div> -->
             </volist>
-            </div>
-            
         </div>
     </div>
     <include file="Public:footer" />

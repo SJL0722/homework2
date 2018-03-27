@@ -2,16 +2,16 @@
 namespace Home\Controller;
 use Think\Controller;
 class MovieController extends Controller {
-    //电影管理：显示全部频道
+    //电影管理：显示全部分类
     public function index(){
         $Category = M('category');
         $clist = $Category->select();
         $this->assign('clist', $clist);
         $this->assign('empty','<div class="panel panel-default">
-        <div class="panel-body"><p class="text-center">暂无频道</p></div></div>');
+        <div class="panel-body"><p class="text-center">暂无分类</p></div></div>');
         $this->display();
     }
-    //展示频道内容
+    //展示分类内容
     public function section($id=''){
         $id = $_GET['id'];
         $Category = M('category');

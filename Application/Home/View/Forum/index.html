@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>爱影视::论坛</title>
+    <title>视频学习网::论坛</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,6 +31,12 @@
                 <div class="panel panel-default">
                     <!-- List group -->
                     <div class="list-group">
+                        <if condition="isset($_SESSION['username'])">
+                            <a href="__ROOT__/Home/Form/forum_add" class="list-group-item text-center active">
+                                <span class="glyphicon glyphicon-add"></span> 发布新帖子
+                            </a>
+                            <else />
+                        </if>
                         <volist name="alist" id="item" empty="$empty">
                             <div class="list-group-item">
                                 <div class="row clearfix">

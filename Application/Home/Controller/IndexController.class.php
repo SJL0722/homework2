@@ -11,8 +11,6 @@ class IndexController extends Controller {
             $order = "movie.addtime desc";
         }else if($id == 2){
             $order = "movie.addtime asc";
-        }else if($id == 3){
-            $order = "avg(vote.num) asc";
         }
 
         // 场馆获取

@@ -6,7 +6,7 @@ class ArticleController extends Controller {
         $Article = M('article');
         $alist = $Article->field('article.*,admin.username as uname,admin.img as uimg')->join('admin ON article.uid = admin.id')->select();
         $this->assign('alist', $alist);
-        $this->assign('empty','<p class="text-center">暂无影评教程</p>');
+        $this->assign('empty','<p class="text-center">暂无经验分享教程</p>');
         $this->display();
     }
     public function detail($id=''){

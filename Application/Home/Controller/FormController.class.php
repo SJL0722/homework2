@@ -228,7 +228,7 @@ class FormController extends Controller{
                         $image = new \Think\Image();
                         $image->open($fullpath);
                         // 生成一个固定大小1920*700的缩略图并替换原图
-                        $image->thumb(400, 600,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
+                        $image->thumb(600, 400,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
                     }
                 }
                 if(isset($_FILES['videosource'])){
@@ -424,7 +424,7 @@ class FormController extends Controller{
                         $image = new \Think\Image();
                         $image->open($fullpath);
                         // 生成一个固定大小1920*700的缩略图并替换原图
-                        $image->thumb(400, 600,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
+                        $image->thumb(600, 400,\Think\Image::IMAGE_THUMB_FIXED)->save($fullpath);
                     }
                 }
                 if(isset($_FILES['videosource'])){

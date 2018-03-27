@@ -1,0 +1,1616 @@
+[ 2018-03-26T20:41:49+08:00 ] ::1 /aiyingshi/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000596s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001142s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001407s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0637s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0121s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0351s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0089s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000310s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000485s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.194655s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.194751s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001200s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001720s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002747s ]
+
+[ 2018-03-26T20:43:04+08:00 ] ::1 /aiyingshi/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031939s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.041595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.041679s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0499s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0288s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0227s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0264s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0098s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000168s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000270s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.379497s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.379589s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.045341s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.045600s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.052357s ]
+INFO: [ app_end ] --END-- [ RunTime:0.057930s ]
+
+[ 2018-03-26T20:43:06+08:00 ] ::1 /aiyingshi/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002099s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002257s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0262s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0235s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0246s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.4147s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0837s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0437s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0087s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.135557s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.135684s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001065s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001141s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003115s ]
+
+[ 2018-03-26T23:04:12+08:00 ] ::1 /aiyingshi/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000939s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001029s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.1794s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0505s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0291s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0011s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0173s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0665s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0224s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0219s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0135s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.256070s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.256167s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000853s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001283s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001389s ]
+
+[ 2018-03-26T23:11:16+08:00 ] ::1 /aiyingshi/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000781s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001548s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0459s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0469s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0211s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0166s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0086s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000218s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.124569s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.124658s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000980s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001050s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001606s ]
+
+[ 2018-03-26T23:11:20+08:00 ] ::1 /aiyingshi/Home/Form/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056997s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057096s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001057s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001235s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003777s ]
+
+[ 2018-03-26T23:11:20+08:00 ] ::1 /aiyingshi/Home/Form/verify_c
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002045s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001377s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001490s ]
+
+[ 2018-03-26T23:11:27+08:00 ] ::1 /aiyingshi/Home/Form/verify_c?0.8364681912830334
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001192s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001285s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001094s ]
+
+[ 2018-03-26T23:11:30+08:00 ] ::1 /aiyingshi/Home/Form/login_process
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001007s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0317s ]
+SQL: SELECT * FROM `user` WHERE ( username='345' AND password='345' ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010385s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010555s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001155s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001257s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001093s ]
+
+[ 2018-03-26T23:11:32+08:00 ] ::1 /aiyingshi/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000951s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001333s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0214s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0218s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0213s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0893s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0190s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.124143s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.124246s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001031s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001145s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001720s ]
+
+[ 2018-03-26T23:11:34+08:00 ] ::1 /aiyingshi/Home/Form/ucenter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001213s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001297s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\FormController.class.php 第 68 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0218s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0460s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0188s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0101s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT movie.*,category.name as cname FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( uid=2 ) LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000266s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.116829s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.116930s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001503s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001650s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001937s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002304s ]
+
+[ 2018-03-26T23:11:37+08:00 ] ::1 /aiyingshi/Home/Form/movie_change?id=7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000870s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001343s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0208s ]
+SQL: SELECT movie.* FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( movie.id=7 and movie.uid=2 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0344s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061245s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061329s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001383s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001493s ]
+
+[ 2018-03-26T23:11:43+08:00 ] ::1 /aiyingshi/Home/Form/movie_change?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0183s ]
+SQL: SELECT movie.* FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( movie.id=3 and movie.uid=2 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000204s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000312s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047558s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047645s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001199s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001998s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002095s ]
+
+[ 2018-03-26T23:12:06+08:00 ] ::1 /aiyingshi/home/form/movie_change_process
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002622s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0315s ]
+NOTIC: [8] Undefined index: validate D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] finfo_file(): Empty filename or path D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+SQL: UPDATE `movie` SET `name`='捉妖记2',`typeid`='3',`description`='带你构建完整的并发与高并发知识体系',`content`='&lt;p&gt;【并发编程与高并发难题我们一起攻克】本课程将结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;',`addtime`='2018-03-26 23:12:06' WHERE `id` = 3 [ RunTime:0.0437s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000317s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018743s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018895s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001186s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001283s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001371s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001447s ]
+
+[ 2018-03-26T23:12:07+08:00 ] ::1 /aiyingshi/home/form/ucenter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001208s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\FormController.class.php 第 68 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0338s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( uid=2 ) LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000215s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000274s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.089016s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.089239s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001148s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001222s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001407s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001502s ]
+
+[ 2018-03-26T23:12:11+08:00 ] ::1 /aiyingshi/Home/Form/movie_change?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000874s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001454s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0189s ]
+SQL: SELECT movie.* FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( movie.id=3 and movie.uid=2 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0206s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000218s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046060s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001113s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001697s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001973s ]
+
+[ 2018-03-26T23:13:46+08:00 ] ::1 /aiyingshi/home/form/movie_change_process
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000935s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001614s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0894s ]
+NOTIC: [8] Undefined index: validate D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] finfo_file(): Empty filename or path D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+SQL: UPDATE `movie` SET `name`='Java并发编程与高并发解决方案',`typeid`='3',`description`='带你构建完整的并发与高并发知识体系',`content`='&lt;p&gt;【并发编程与高并发难题我们一起攻克】本课程将结合大量图示及代码演示，让你更容易， 更系统的掌握多线程并发编程（线程安全，线程调度，线程封闭，同步容器等）与高并发处理思路与手段（扩容，缓存，队列，拆分等）相关知识和经验。帮助你构建完整的并发与高并发知识体系，胜任实际开发中并发与高并发问题的处理，倍增高薪面试成功率！&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;',`pic`='image/5ab90e2a47aa8.jpg',`addtime`='2018-03-26 23:13:46' WHERE `id` = 3 [ RunTime:0.0469s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009324s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009407s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000814s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001412s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001491s ]
+
+[ 2018-03-26T23:13:47+08:00 ] ::1 /aiyingshi/home/form/ucenter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001003s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\FormController.class.php 第 68 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0735s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0127s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0141s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( uid=2 ) LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.094428s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.094514s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000877s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002526s ]
+
+[ 2018-03-26T23:13:53+08:00 ] ::1 /aiyingshi/Home/Form/movie_change?id=5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000957s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0884s ]
+SQL: SELECT movie.* FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( movie.id=5 and movie.uid=2 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000271s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052210s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052303s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000826s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001289s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001739s ]
+
+[ 2018-03-26T23:18:16+08:00 ] ::1 /aiyingshi/home/form/movie_change_process
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000970s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001019s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0189s ]
+NOTIC: [8] Undefined index: validate D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] finfo_file(): Empty filename or path D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+SQL: UPDATE `movie` SET `name`='PHP从基础语法到原生项目开发',`typeid`='2',`description`='全网独家PHP实际案例课程合辑，掌握基础语法就能上手主流开发语言。',`content`='&lt;p&gt;您的PHP&amp;nbsp;pro已上线，
+&lt;/p&gt;&lt;p&gt;TA可能是世界上最好的语言？
+&lt;/p&gt;&lt;p&gt;最酷的攻城狮，从查看对方资料开始
+&lt;/p&gt;&lt;p&gt;PHP作为一种通用开源脚本语言，已入选全球五大最受欢迎的编程语言，是唯一入选的脚本语言。2016年全球5000万互联网网站中，有60%以上使用着PHP技术，国内80%以上的动态网站都在使用PHP开发。2011年PHP从业人数新增42%，PHP程序员和招聘岗位的供求比例是1：40。
+&lt;/p&gt;&lt;p&gt;最牛的攻城狮，从实际经验入手规划
+&lt;/p&gt;&lt;p&gt;PHP具备成熟的开源代码及模板，主要用于API接口开发，后台系统管理和web动态网站开发，比如搜狐，新浪，Facebook，谷歌，百度，淘宝，大众点评，京东，糯米等等
+&lt;/p&gt;&lt;p&gt;最hin的攻城狮，以确立目标为终极导向
+&lt;/p&gt;&lt;p&gt;据前程无忧网发布的调查报告，PHP软件开发是未来几年最热门和最受欢迎的职业之一，具有10年工作经验的高级PHP工程师年薪在三十万元左右。初级的PHP软件开发人员，平均月薪8000-10000元，中高级的PHP工程师平均月薪超过15000元。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;',`pic`='image/5ab90f386e04b.jpg',`addtime`='2018-03-26 23:18:16' WHERE `id` = 5 [ RunTime:0.0537s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009577s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009655s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000815s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001197s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001282s ]
+
+[ 2018-03-26T23:18:17+08:00 ] ::1 /aiyingshi/home/form/ucenter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000969s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\FormController.class.php 第 68 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0254s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0126s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0123s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( uid=2 ) LIMIT 0,10   [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.094133s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.094239s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001363s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001605s ]
+
+[ 2018-03-26T23:18:20+08:00 ] ::1 /aiyingshi/Home/Form/movie_change?id=7
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000884s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001026s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0214s ]
+SQL: SELECT movie.* FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( movie.id=7 and movie.uid=2 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0486s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047446s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000819s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003712s ]
+
+[ 2018-03-26T23:19:54+08:00 ] ::1 /aiyingshi/home/form/movie_change_process
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001971s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002127s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0988s ]
+NOTIC: [8] Undefined index: validate D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] finfo_file(): Empty filename or path D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+SQL: UPDATE `movie` SET `name`='Android常用异常集及解决方案',`typeid`='4',`description`='介绍Android常用异常集及常用的几种解决方案',`content`='&lt;p&gt;简介：介绍Android常见异常的种类及常见发生场景，如何高效的调试，异常捕获，错误日志上报等等&lt;/p&gt;&lt;p&gt;&amp;nbsp;第1章&amp;nbsp;常用异常集及解决方案-课程介绍&amp;nbsp;
+&lt;/p&gt;&lt;p&gt;&amp;nbsp;第2章&amp;nbsp;Android常见异常&amp;nbsp;
+&lt;/p&gt;&lt;p&gt;&amp;nbsp;第3章&amp;nbsp;如何高效的Debug&amp;nbsp;
+&lt;/p&gt;&lt;p&gt;&amp;nbsp;第4章&amp;nbsp;具体案例具体分析&amp;nbsp;
+&lt;/p&gt;&lt;p&gt;&amp;nbsp;第5章&amp;nbsp;Android全局异常捕获处理（升级篇）&amp;nbsp;
+&lt;/p&gt;&lt;p&gt;&amp;nbsp;第6章&amp;nbsp;Android错误日志的上报&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;',`pic`='image/5ab90f9a824f3.jpg',`addtime`='2018-03-26 23:19:54' WHERE `id` = 7 [ RunTime:0.0686s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000131s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010204s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010285s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001220s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001293s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001248s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001326s ]
+
+[ 2018-03-26T23:19:56+08:00 ] ::1 /aiyingshi/home/form/ucenter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\FormController.class.php 第 68 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0201s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0123s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0669s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0143s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT movie.*,category.name as cname FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( uid=2 ) LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000270s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.097333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.097420s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000877s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001461s ]
+
+[ 2018-03-26T23:20:01+08:00 ] ::1 /aiyingshi/Home/Form/ucenter?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000703s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001483s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0411s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0684s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0135s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `favor` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT favor.*,movie.id as mid,movie.name as mname,movie.pic as mpic,category.name as cname FROM `favor` INNER JOIN movie ON favor.rid = movie.id INNER JOIN category ON movie.typeid = category.id  WHERE ( favor.uid=2 ) LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000280s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.099228s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.099325s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000723s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000948s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001022s ]
+
+[ 2018-03-26T23:20:02+08:00 ] ::1 /aiyingshi/Home/Form/ucenter?id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000867s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0221s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0127s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0105s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `forum` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `forum` WHERE ( uid=2 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000260s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.090726s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.090815s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000769s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000859s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000930s ]
+
+[ 2018-03-26T23:20:03+08:00 ] ::1 /aiyingshi/Home/Form/ucenter?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000790s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0198s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0125s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0126s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `comment` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname FROM `comment` INNER JOIN movie on comment.rid = movie.id  WHERE ( comment.uid = 2 and movie.pass = 1 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000182s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000240s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.099654s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.099852s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001323s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001398s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001487s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001553s ]
+
+[ 2018-03-26T23:20:05+08:00 ] ::1 /aiyingshi/Home/Form/ucenter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\FormController.class.php 第 68 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.1127s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0145s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0136s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0106s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( uid=2 ) LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000196s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093621s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093728s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000900s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001263s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001360s ]
+
+[ 2018-03-26T23:20:06+08:00 ] ::1 /aiyingshi/Home/Form/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012373s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012486s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000845s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000906s ]
+
+[ 2018-03-26T23:20:08+08:00 ] ::1 /aiyingshi/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001022s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0435s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0168s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0196s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0174s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0089s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000208s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.115791s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.115883s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002004s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002186s ]
+
+[ 2018-03-26T23:20:10+08:00 ] ::1 /aiyingshi/Home/Form/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000990s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000234s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016719s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016818s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000814s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001013s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001083s ]
+
+[ 2018-03-26T23:20:10+08:00 ] ::1 /aiyingshi/Home/Form/verify_c
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000741s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001252s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001205s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001319s ]
+
+[ 2018-03-26T23:20:18+08:00 ] ::1 /aiyingshi/Home/Form/login_process
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001544s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0250s ]
+SQL: SELECT * FROM `user` WHERE ( username='123' AND password='123' ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011111s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011299s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000812s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001074s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001158s ]
+
+[ 2018-03-26T23:20:19+08:00 ] ::1 /aiyingshi/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001587s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0215s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0175s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0181s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0177s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0094s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.115283s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.115386s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000876s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001383s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001497s ]
+
+[ 2018-03-26T23:20:30+08:00 ] ::1 /aiyingshi/Home/Form/ucenter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000991s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\FormController.class.php 第 68 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0238s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0686s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0146s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0106s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT movie.*,category.name as cname FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( uid=1 ) LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000180s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.095403s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.095481s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002162s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002262s ]
+
+[ 2018-03-26T23:20:32+08:00 ] ::1 /aiyingshi/Home/Form/movie_change?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0290s ]
+SQL: SELECT movie.* FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( movie.id=6 and movie.uid=1 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0189s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000181s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000296s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052567s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052644s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002698s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002944s ]
+
+[ 2018-03-26T23:21:53+08:00 ] ::1 /aiyingshi/home/form/movie_change_process
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001419s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0268s ]
+NOTIC: [8] Undefined index: validate D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] finfo_file(): Empty filename or path D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+NOTIC: [2] finfo_file(): Empty filename or path D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+SQL: UPDATE `movie` SET `name`='HTML+CSS基础课程',`typeid`='1',`description`='HTML+CSS基础教程8小时带领大家步步深入学习标签用法和意义',`content`='&lt;p&gt;本课程从最基本的概念开始讲起，步步深入，带领大家学习HTML、CSS样式基础知识，了解各种常用标签的意义以及基本用法，后半部分教程主要讲解CSS样式代码添加，为后面的案例课程打下基础。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;',`addtime`='2018-03-26 23:21:53' WHERE `id` = 6 [ RunTime:0.0317s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011316s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011462s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001170s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001244s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000934s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001035s ]
+
+[ 2018-03-26T23:21:55+08:00 ] ::1 /aiyingshi/home/form/ucenter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000623s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001099s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\FormController.class.php 第 68 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0226s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0153s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT movie.*,category.name as cname FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( uid=1 ) LIMIT 0,10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000228s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000304s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.085834s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.085938s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000995s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002264s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002353s ]
+
+[ 2018-03-26T23:21:58+08:00 ] ::1 /aiyingshi/Home/Form/movie_change?id=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000826s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001111s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0243s ]
+SQL: SELECT movie.* FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( movie.id=6 and movie.uid=1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0183s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053389s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053477s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002669s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003351s ]
+
+[ 2018-03-26T23:22:04+08:00 ] ::1 /aiyingshi/home/form/movie_change_process
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000985s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0278s ]
+NOTIC: [8] Undefined index: validate D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] finfo_file(): Empty filename or path D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+SQL: UPDATE `movie` SET `name`='HTML+CSS基础课程',`typeid`='1',`description`='HTML+CSS基础教程8小时带领大家步步深入学习标签用法和意义',`content`='&lt;p&gt;本课程从最基本的概念开始讲起，步步深入，带领大家学习HTML、CSS样式基础知识，了解各种常用标签的意义以及基本用法，后半部分教程主要讲解CSS样式代码添加，为后面的案例课程打下基础。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;',`pic`='image/5ab9101cc0499.jpg',`addtime`='2018-03-26 23:22:04' WHERE `id` = 6 [ RunTime:0.0275s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009157s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009243s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001211s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000983s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001049s ]
+
+[ 2018-03-26T23:22:06+08:00 ] ::1 /aiyingshi/home/form/ucenter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001475s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\FormController.class.php 第 68 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0224s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0132s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0081s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( uid=1 ) LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000263s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.085873s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.085960s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001106s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001182s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002265s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002521s ]
+
+[ 2018-03-26T23:22:09+08:00 ] ::1 /aiyingshi/Home/Form/movie_change?id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000985s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0419s ]
+SQL: SELECT movie.* FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( movie.id=8 and movie.uid=1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000333s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000449s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049333s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049417s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000816s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002070s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002244s ]
+
+[ 2018-03-26T23:23:53+08:00 ] ::1 /aiyingshi/home/form/movie_change_process
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0244s ]
+NOTIC: [8] Undefined index: validate D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] finfo_file(): Empty filename or path D:\XAMPP\htdocs\aiyingshi\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+SQL: UPDATE `movie` SET `name`='iOS 基础之搞定多线程',`typeid`='5',`description`='ios基础教程介绍多线程的四种实现技术方案，搞定多线程，让程序高效执行',`content`='&lt;p&gt;简介：本课程是iOS基础之搞定多线程，主要针对多线程的基础知识。目前开发过程中多线程是必不可少的，占据着重要的地位。如果想提高程序的执行效率，就必须掌握多线程。本门课程将重点介绍多线程的四种实现技术方案，分别是pThread，NSThread，GCD和NSOperation。&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;',`pic`='image/5ab91089aaa19.jpg',`addtime`='2018-03-26 23:23:53' WHERE `id` = 8 [ RunTime:0.0494s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009435s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009521s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001064s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001129s ]
+
+[ 2018-03-26T23:23:55+08:00 ] ::1 /aiyingshi/home/form/ucenter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\FormController.class.php 第 68 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0202s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0089s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( uid=1 ) LIMIT 0,10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000194s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000264s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.108906s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.108989s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002182s ]
+
+[ 2018-03-26T23:23:59+08:00 ] ::1 /aiyingshi/Home/Form/ucenter?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000777s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000980s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001063s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0328s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0097s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `favor` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT favor.*,movie.id as mid,movie.name as mname,movie.pic as mpic,category.name as cname FROM `favor` INNER JOIN movie ON favor.rid = movie.id INNER JOIN category ON movie.typeid = category.id  WHERE ( favor.uid=1 ) LIMIT 0,10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000254s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.094355s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.094438s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000958s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001045s ]
+
+[ 2018-03-26T23:24:00+08:00 ] ::1 /aiyingshi/Home/Form/ucenter?id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000975s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0199s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0380s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0486s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0196s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `forum` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `forum` WHERE ( uid=1 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000234s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.095568s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.095681s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001098s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001268s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001359s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001428s ]
+
+[ 2018-03-26T23:24:01+08:00 ] ::1 /aiyingshi/Home/Form/ucenter?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001022s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0122s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0186s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0330s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0093s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `comment` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname FROM `comment` INNER JOIN movie on comment.rid = movie.id  WHERE ( comment.uid = 1 and movie.pass = 1 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000198s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000275s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.096017s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.096112s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001502s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001569s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001091s ]
+
+[ 2018-03-26T23:24:01+08:00 ] ::1 /aiyingshi/Home/Form/ucenter?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0197s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0218s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `favor` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT favor.*,movie.id as mid,movie.name as mname,movie.pic as mpic,category.name as cname FROM `favor` INNER JOIN movie ON favor.rid = movie.id INNER JOIN category ON movie.typeid = category.id  WHERE ( favor.uid=1 ) LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.098345s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.098422s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000863s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001837s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001918s ]
+
+[ 2018-03-26T23:24:02+08:00 ] ::1 /aiyingshi/Home/Form/ucenter
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001034s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\FormController.class.php 第 68 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0216s ]
+SQL: SHOW COLUMNS FROM `favor` [ RunTime:0.0141s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0089s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname FROM `movie` INNER JOIN category ON movie.typeid = category.id  WHERE ( uid=1 ) LIMIT 0,10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000212s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000271s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.096527s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.096644s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000784s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001335s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001423s ]
+
+[ 2018-03-26T23:24:04+08:00 ] ::1 /aiyingshi/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000961s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001024s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0189s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0213s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0011s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0244s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0213s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0115s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000224s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000343s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.133569s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.133658s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000923s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001754s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001936s ]
+
+[ 2018-03-26T23:26:54+08:00 ] ::1 /aiyingshi/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001106s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000867s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0302s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0245s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0127s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0202s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0162s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0106s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.127612s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.127713s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000847s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001369s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001480s ]
+
+[ 2018-03-26T23:38:29+08:00 ] ::1 /aiyingshi/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.040437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.040522s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0275s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0210s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.1222s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0295s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0467s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0199s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0108s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000276s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001113s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.385166s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.385268s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.021563s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.021639s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.074332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.074914s ]
+
+[ 2018-03-26T23:55:44+08:00 ] ::1 /aiyingshi/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000968s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001061s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0238s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0290s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0011s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0213s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0174s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0263s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0217s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000180s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000239s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.133230s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.133322s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000955s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002611s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003087s ]
+
+[ 2018-03-26T23:55:46+08:00 ] ::1 /aiyingshi/Home/movie
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000968s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001901s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0928s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000272s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054824s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054912s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001501s ]
+
+[ 2018-03-26T23:56:11+08:00 ] ::1 /aiyingshi/Home/movie
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000685s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002535s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0286s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045271s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045375s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000906s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000972s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002156s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002266s ]
+
+[ 2018-03-26T23:56:37+08:00 ] ::1 /aiyingshi/Home/movie
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000710s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001004s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0250s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000252s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047946s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048042s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000870s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000939s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003429s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003540s ]
+
+[ 2018-03-26T23:56:58+08:00 ] ::1 /aiyingshi/Home/movie
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000623s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001592s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0728s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.092790s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.092909s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001148s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001676s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001836s ]
+
+[ 2018-03-26T23:57:10+08:00 ] ::1 /aiyingshi/Home/movie
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000765s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000920s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001003s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0226s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000347s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046277s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046379s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001543s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003602s ]
+
+[ 2018-03-26T23:57:50+08:00 ] ::1 /aiyingshi/Home/movie
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001098s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001429s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0413s ]
+SQL: SELECT * FROM `category`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043886s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043970s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001073s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002070s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002176s ]
+
+[ 2018-03-26T23:58:13+08:00 ] ::1 /aiyingshi/Home/article
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001041s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0171s ]
+SQL: SELECT article.*,admin.username as uname,admin.img as uimg FROM `article` INNER JOIN admin ON article.uid = admin.id   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000127s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000191s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.064020s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064121s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000828s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001107s ]
+
+[ 2018-03-26T23:58:14+08:00 ] ::1 /aiyingshi/Home/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001009s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001009s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+NOTIC: [8] Undefined index: id D:\XAMPP\htdocs\aiyingshi\Application\Home\Controller\IndexController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `movie` [ RunTime:0.0313s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `movie` WHERE ( pass = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0380s ]
+SQL: SELECT movie.id,count(*),sum(vote.num) FROM `movie` INNER JOIN vote on movie.id = vote.rid  WHERE ( vote.type= 'movie' and pass = 1  ) GROUP BY movie.id ORDER BY movie.addtime desc LIMIT 0,10   [ RunTime:0.0018s ]
+SQL: SELECT movie.*,category.name as cname,user.username as uname,user.img as uimg,count(vote.num) as hcount FROM `movie` INNER JOIN category ON movie.typeid = category.id INNER JOIN vote on movie.id = vote.rid INNER JOIN user ON movie.uid = user.id  WHERE ( movie.pass = 1 ) GROUP BY vote.rid ORDER BY rand() LIMIT 2   [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `slideshow` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `slideshow`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `news` ORDER BY rand() LIMIT 3   [ RunTime:0.0174s ]
+SQL: SHOW COLUMNS FROM `comment` [ RunTime:0.0092s ]
+SQL: SELECT comment.*,movie.id as mid,movie.name as mname,user.username as uname,user.img as uimg FROM `comment` INNER JOIN movie on comment.rid = movie.id INNER JOIN user ON comment.uid = user.id  WHERE ( movie.pass = 1 ) ORDER BY rand() LIMIT 3   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000211s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.134145s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.134238s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000904s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000977s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001174s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001325s ]
+
+[ 2018-03-26T23:58:15+08:00 ] ::1 /aiyingshi/Home/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001160s ]
+SQL: SHOW COLUMNS FROM `news` [ RunTime:0.0193s ]
+SQL: SELECT * FROM `news`  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.105905s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.106043s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000787s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000868s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004855s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004931s ]
+
+[ 2018-03-26T23:58:16+08:00 ] ::1 /aiyingshi/Home/forum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000970s ]
+SQL: SHOW COLUMNS FROM `forum` [ RunTime:0.0187s ]
+SQL: SELECT forum.*,user.username as uname,user.img as uimg FROM `forum` INNER JOIN user ON forum.uid = user.id   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056767s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056859s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000776s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000989s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001265s ]
+

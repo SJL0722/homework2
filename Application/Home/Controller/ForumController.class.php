@@ -3,8 +3,8 @@ namespace Home\Controller;
 use Think\Controller;
 class ForumController extends Controller {
     public function index(){
-        $Forum = M('Forum');
-        $alist = $Forum->field('Forum.*,user.username as uname,user.img as uimg')->join('user ON Forum.uid = user.id')->select();
+        $forum = M('forum');
+        $alist = $forum->field('forum.*,user.username as uname,user.img as uimg')->join('user ON forum.uid = user.id')->select();
         $this->assign('alist', $alist);
         $this->assign('empty','<p class="text-center">暂无帖子</p>');
         $this->display();
@@ -12,15 +12,15 @@ class ForumController extends Controller {
     public function detail($id=''){
         $id = $_GET['id'];
         if(isset($id)){
-            $Forum = M('Forum');
-            $alist = $Forum->field('Forum.*,user.username as uname,user.img as uimg')->join('user ON Forum.uid = user.id')->where("Forum.id=$id")->find();
+            $forum = M('forum');
+            $alist = $forum->field('forum.*,user.username as uname,user.img as uimg')->join('user ON forum.uid = user.id')->where("forum.id=$id")->find();
             if($alist){
                 //统计
                 $Vote = M('vote');
-                // $vlist = $Vote->field('sum(num) as hcount,avg(num) as scount')->where("rid = $id and type = 'Forum'")->group('rid')->find();
+                // $vlist = $Vote->field('sum(num) as hcount,avg(num) as scount')->where("rid = $id and type = 'forum'")->group('rid')->find();
                 $Comment = M('comment');
-                $ccount = $Comment->where("rid = $id and type = 'Forum'")->count();
-                $comment = $Comment->field('comment.*,user.username as uname,user.img as uimg')->join('user ON comment.uid = user.id')->where("rid = $id and type = 'Forum'")->select();
+                $ccount = $Comment->where("rid = $id and type = 'forum'")->count();
+                $comment = $Comment->field('comment.*,user.username as uname,user.img as uimg')->join('user ON comment.uid = user.id')->where("rid = $id and type = 'forum'")->select();
 
                 $this->assign('alist',$alist);
                 $this->assign('comment',$comment);
